@@ -16,9 +16,10 @@ try {
  
   const resarr= res.data.businesses
 //   const resarr= res.data._embedded.events
-
+console.log('===================', resarr, '****************************')
   return resarr
 }catch(error){
+  console.log('===========error========', error, '************error****************')
   return {message : error}
 }
 }

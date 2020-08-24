@@ -16,10 +16,12 @@ export default async function topEvents( ctx: Record<any, unknown> = {}){
   })
  
   const resarr= res.data.events
-//   const resarr= res.data._embedded.events
+//   
+console.log('===================', resarr, '****************************')
 
   return resarr
 }catch (error){
+  console.log('===========error========', error, '************error****************')
   return {message : error}
 }
 }

@@ -3,5 +3,5 @@ services:
     name: myapp
     env: node
     plan: starter
-    buildCommand: yarn; blitz build
+    buildCommand: blitz build
     startCommand: blitz start --production -H 0.0.0.0

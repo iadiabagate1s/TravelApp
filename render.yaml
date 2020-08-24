@@ -3,5 +3,5 @@ services:
     name: myapp
     env: node
     plan: starter
-    buildCommand: blitz build
-    startCommand: blitz start --production -H 0.0.0.0
+    buildCommand: blitz build -H 127.0.0.1 -p 5632
+    startCommand: blitz start --production -H 127.0.0.1 -p 5632

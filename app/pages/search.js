@@ -53,14 +53,7 @@ export default function search() {
         <title>search</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-        <ErrorBoundary
-    
-      onReset={() => {
-        // This ensures the Blitz useQuery hooks will automatically refetch
-        // data any time you reset the error boundary
-        queryCache.resetErrorBoundaries()
-      }}
-    >
+      
         <div>
               <Suspense fallback={<div><SpinnerLoad/></div>}>
             <FeatEvt location={formdata.location} selected={selected} update={update}/>
@@ -87,7 +80,7 @@ export default function search() {
          </Container>
             
         </div>
-        </ErrorBoundary>
+        
         </>
     )
 }

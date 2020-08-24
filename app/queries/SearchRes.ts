@@ -6,7 +6,7 @@ const YelpKey = 'gA1R_SqY6iK8kZDILXE3SXXYQRyd_AIUgMSGESRz5ViDBx5fNJbiDAt96NinaQT
 const YelpUrl = 'https://api.yelp.com/v3'
 export default async function SearchResli(search, ctx: Record<any, unknown> = {}){
 
-
+try {
   const res = await axios.get(`https://api.yelp.com/v3/events?categories=${search.term}&location=${search.location}&start_date<=${+ new Date}&sort_on=time_start&radius=40000&limit=25`,{
     headers:{
       Authorization: `Bearer ${YelpKey}`
@@ -18,4 +18,7 @@ export default async function SearchResli(search, ctx: Record<any, unknown> = {}
 //   const resarr= res.data._embedded.events
 
   return resarr
+}catch(error){
+  return {message : error}
+}
 }

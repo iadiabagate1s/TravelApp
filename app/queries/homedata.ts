@@ -6,6 +6,7 @@ const YelpKey = 'gA1R_SqY6iK8kZDILXE3SXXYQRyd_AIUgMSGESRz5ViDBx5fNJbiDAt96NinaQT
 const YelpUrl = 'https://api.yelp.com/v3'
 export default async function topEvents( ctx: Record<any, unknown> = {}){
 
+  try{
 
   const res = await axios.get(`https://api.yelp.com/v3/events?&start_date<=${+ new Date}&sort_on=time_start&limit=10`,{
     headers:{
@@ -18,4 +19,7 @@ export default async function topEvents( ctx: Record<any, unknown> = {}){
 //   const resarr= res.data._embedded.events
 
   return resarr
+}catch (error){
+  return {message : error}
+}
 }

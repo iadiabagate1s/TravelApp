@@ -9,7 +9,7 @@ const YelpUrl = 'https://api.yelp.com/v3'
 export default async function CatAtt(id, ctx: Record<any, unknown> = {}){
 
 
-  
+  try{
   const res = await axios.get(`https://api.yelp.com/v3/events?categories=${id.id}&start_date<=${+ new Date}&sort_on=time_start&limit=10`,{
     headers:{
       Authorization: `Bearer ${YelpKey}`
@@ -21,4 +21,7 @@ export default async function CatAtt(id, ctx: Record<any, unknown> = {}){
 //   const resarr= res.data._embedded.events
 
   return resarr
+}catch(error){
+  return {message : error}
+}
 }

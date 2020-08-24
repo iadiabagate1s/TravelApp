@@ -7,7 +7,7 @@ const YelpUrl = 'https://api.yelp.com/v3'
 
 export default async function EventsID(id, ctx: Record<any, unknown> = {}){
 
-
+try{
   // const res = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?id=${id.id}&apikey=OR7t52i81Lw1AsKFuoEiF86z9ASI6hVT`)
   const res = await axios.get(`https://api.yelp.com/v3/events/${id.id}`,{
     headers:{
@@ -21,4 +21,7 @@ export default async function EventsID(id, ctx: Record<any, unknown> = {}){
 //   const resarr= res.data._embedded.events
 
   return resarr
+}catch(error){
+  return {message: error}
+}
 }

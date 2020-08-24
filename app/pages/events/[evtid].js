@@ -15,7 +15,7 @@ import SpinnerLoad from '../../components/Spinner'
 import SearchBar from '../../components/SearchBar'
 import {ErrorBoundary} from "react-error-boundary"
 import {Head} from 'blitz'
-import ErrorBoundary from "app/components/ErrorBoundary"
+
 
 
 
@@ -70,20 +70,20 @@ export default function AttracEvents() {
                 <SearchBar/>
             
            <Row>
-           <ErrorBoundary fallback={(error) => <div>Error: {JSON.stringify(error)}</div>}>
+          
             <Suspense fallback={<h1><SpinnerLoad/></h1>}>
           <Col md={4}><EventDetail evtLocation = {evtLocation} id={params.evtid}/></Col>
          </Suspense>
-         </ErrorBoundary>
+         
          
        <Col md={{ span: 6, offset: 1 }}> <MapsFrame frominput={frominput} enterFrom={enterFrom} desti={location} /></Col>
         </Row>
          
-        <ErrorBoundary fallback={(error) => <div>Error: {JSON.stringify(error)}</div>}>
+        
          <Suspense fallback={<h1><SpinnerLoad/></h1>}>
          <NearBuis lat ={location.latitude} lon = {location.longitude}/>
          </Suspense>
-         </ErrorBoundary>
+         
        
         
          

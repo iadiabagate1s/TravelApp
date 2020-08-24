@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import SpinnerLoad from '../components/Spinner'
 import {ErrorBoundary} from "react-error-boundary"
 import {Head} from 'blitz'
-import ErrorBoundary from "app/components/ErrorBoundary"
+
 
 const useStyles = makeStyles((theme) => ({
  
@@ -56,12 +56,12 @@ export default function search() {
       </Head>
       
         <div>
-        <ErrorBoundary fallback={(error) => <div>Error: {JSON.stringify(error)}</div>}>
+       
               <Suspense fallback={<div><SpinnerLoad/></div>}>
             <FeatEvt location={formdata.location} selected={selected} update={update}/>
             
          </Suspense>
-         </ErrorBoundary>
+ 
             <SearchBar/>
           
 
@@ -71,11 +71,11 @@ export default function search() {
          <Col><FeatCont className={classes.ftevt} data={selected}/></Col>
 
 
-         <ErrorBoundary fallback={(error) => <div>Error: {JSON.stringify(error)}</div>}>
+         
          <Suspense fallback={<div><SpinnerLoad/></div>}>
          <Col><SearchRes formdata={formdata} update={update}/></Col>
          </Suspense>
-         </ErrorBoundary>
+      
 
 
          </Row>

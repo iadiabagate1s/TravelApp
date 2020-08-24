@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: myapp
+    env: node
+    plan: starter
+    buildCommand: yarn; blitz build
+    startCommand: blitz start --production -H 0.0.0.0

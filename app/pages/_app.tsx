@@ -1,6 +1,7 @@
 import { AppProps, ErrorComponent } from "blitz"
 import { ErrorBoundary } from "react-error-boundary"
 import { queryCache } from "react-query"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginForm from "app/auth/components/LoginForm"
 
 export default function App({ Component, pageProps }: AppProps) {

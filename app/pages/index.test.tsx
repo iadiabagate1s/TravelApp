@@ -1,7 +1,7 @@
 import React from "react"
 import { render } from "test/utils"
 
-import Home from "./index"
+import Home from "."
 
 test.skip("renders blitz documentation link", () => {
   // This is an example of how to ensure a specific item is in the document
